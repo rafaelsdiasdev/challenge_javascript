@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { NavLink } from 'react-router-dom'
 
 class User extends Component {
     constructor(props) {
@@ -60,10 +59,6 @@ class User extends Component {
                     </div>
                 </div>
                 <hr />
-                {/* <h1><strong>User</strong></h1>
-                <p><strong>ID: </strong>{ID}</p>
-                <p><strong>Total Amount Taxes: </strong>{totalAmountInTaxes}</p>
-                <p><strong>Total de Parcelas: </strong>{data.length}</p> */}
             </div>
         )
     }

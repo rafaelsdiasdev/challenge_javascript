@@ -10,7 +10,6 @@ class Navbar extends Component {
     }
 
     render() {
-        // console.log('nav', this.props)
         return (
             <div>
                 <nav className="navbar navbar-light bg-light d-flex justify-content-center bg-navbar fixed-top">

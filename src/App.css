@@ -40,4 +40,35 @@
   padding-bottom: 8.5rem;    /* Footer height */
 }
 
+/* Grow Shadow */
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.card-header {
+  background-color: #4CB1C9;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #4CB1C9;
+}
+
+.bg-navbar {
+  background: rgb(153,60,176);
+  background: linear-gradient(90deg, rgba(153,60,176,1) 38%, rgba(76,178,201,1) 100%);
+}
 

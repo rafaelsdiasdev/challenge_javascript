@@ -12,16 +12,13 @@ class Installments extends Component {
     payment(idx) {
         const installments = this.props.data.installments
         const data = this.props.data.listOfData
-        // console.log('===>',data)
         const listOfData = data.amountTaken -= installments[idx].value
         data.amountPayd += installments[idx].value
-        // console.log('pay',data.amountPayd, installments[idx].value)
-        // console.log(valorPago)
+
         installments[idx].payd = true
         this.setState({
             installments: installments,
             listOfData: listOfData,
-            // valorPago: valorPago
 
         })
     }

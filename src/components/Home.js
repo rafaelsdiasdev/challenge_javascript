@@ -30,12 +30,9 @@ class Home extends Component {
     }
 
     render() {
-        // console.log('==>', this.state)
         return (
             <div id="content-wrap">
-                {/* <p>Olá {this.state.name.split(' ')[0]}</p> */}
                 <Installments data={this.state} />
-                {/* <Footer/> */}
             </div>
         )
     }
