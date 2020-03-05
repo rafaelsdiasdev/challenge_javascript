@@ -32,7 +32,7 @@ class Installments extends Component {
     render() {
         const data = this.props.data.installments
         return (
-            <div className="container mb-4">
+            <div className="container mb-4 mobile">
                 <User data={this.props} />
                 <h1 className="mt-4">Boletos</h1>
                 <div className="form-check">
@@ -40,7 +40,7 @@ class Installments extends Component {
                     <label className="form-check-label" htmlFor="exampleCheck1">Mostrar apenas boletos a pagar</label>
                 </div>
                 <div className="row">
-                    <div className="col d-flex flex-wrap justify-content-between">
+                    <div className="col d-flex flex-wrap justify-content-between mobile">
                         {this.state.filter ? data.filter(el => el.payd === false).map((el, idx) =>
                             <div key={idx}>
                                 <div className="card mt-4 hvr-grow-shadow" style={{ minWidth: "300px" }}>

@@ -6,7 +6,6 @@ class User extends Component {
         super(props)
         this.state = {
             listOfData: [],
-            installments: [],
             name: 'Rafael Dias',
             email: 'rafaels.dias@me.com',
             photo: 'https://res.cloudinary.com/dcbi1lakq/image/upload/v1581194942/photo/IMG-20191003-WA0012_mlqvpi.jpg',
@@ -24,7 +23,6 @@ class User extends Component {
                     amountPayd: data.amountPayd,
                     monthlyInterest: data.monthlyInterest,
                     totalAmountInTaxes: data.totalAmountInTaxes,
-                    installments: responseFromDB.data.installments,
                     listOfData: responseFromDB.data
                 })
             })
@@ -37,24 +35,22 @@ class User extends Component {
     render() {
         const { photo, name, email, github } = this.state
         const data = this.props.data.data.listOfData
-        const installments = data.installments
-        console.log(installments)
         return (
             <div className="container mb-4">
-                <div className="row">
-                    <div className="col-3">
-                        <img className="photo" src={photo}></img>
+                <div className="row mobile">
+                    <div className="col-md-3">
+                        <img className="photo" src={photo} alt={name}></img>
                     </div>
-                    <div className="col-5">
+                    <div className="col-md-5 mt-4">
                         <p><strong>Nome: </strong>{name}</p>
                         <p><strong>E-mail: </strong>{email}</p>
-                        <p><strong>Github: </strong><a target="_branck" href="http://github.com/rafaelsdiasdev">{github}</a></p>
+                        <p><strong>Github: </strong><a target="_blanck" href="http://github.com/rafaelsdiasdev">{github}</a></p>
                     </div>
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <p><strong>Juros Mensais: </strong>{data.monthlyInterest}%</p>
                         <p><strong>Valor Pago: </strong>R$ {data.amountPayd},00</p>
                         <p><strong>Total a pagar: </strong>R$ {data.amountTaken + data.totalAmountInTaxes},00</p>
-                        <p><strong>Total de juros: </strong>R$ {data.totalAmountInTaxes},00</p>                     {/* <p><strong>Parcelas pagas: </strong>{installments.filter(el => el.payd === true).length}</p> */}
+                        <p><strong>Total de juros: </strong>R$ {data.totalAmountInTaxes},00</p>                     
 
                     </div>
                 </div>

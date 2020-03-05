@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Installments from './Installments'
 
-import { NavLink } from 'react-router-dom'
-
 class Home extends Component {
     constructor(props) {
         super(props)
@@ -23,7 +21,6 @@ class Home extends Component {
             })
             .catch(err => console.log(err))
     }
-
 
     componentDidMount() {
         this.getAllData();
