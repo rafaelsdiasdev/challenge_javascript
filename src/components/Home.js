@@ -8,6 +8,7 @@ export default function Home() {
     const [newInstallments, setNewInstallments] = useState([])
     const [info, setData] = useState([])
     const [user, setUser] = useState([])
+    const [selected, setSelected] = useState("A pagar")
 
     useEffect(() => {
         async function fetchData() {
@@ -24,29 +25,35 @@ export default function Home() {
     useEffect(() => {
         async function userData() {
             const response = await users
+
             setUser(response)
         }
         userData()
     }, [])
 
     const handleRadioChange = event => {
-        let filtered = ''
+        let filter = ''
         if (event.target.id === 'toPay') {
-            filtered = installments.filter(el => !el.payd)
+            filter = installments.filter(el => !el.payd)
         } else if (event.target.id === 'payed') {
-            filtered = installments.filter(el => el.payd)
-        } else if (event.target.id === 'together') {
-            filtered = installments.map(el => el)
+            filter = installments.filter(el => el.payd)
+        } else {
+            filter = installments.map(el => el)
         }
-        setNewInstallments(filtered)
+
+        const select = event.target.value
+
+        setNewInstallments(filter)
+        setSelected(select)
     }
 
     const handleAmountTaken = id => {
-        const amountTaken = info.amountTaken - installments[id].value
-        const amountPayd = info.amountPayd + installments[id].value
+        const amountTaken = info.amountTaken -= installments[id].value
+        const amountPayd = info.amountPayd += installments[id].value
         installments[id].payd = true
         const payd = installments.payd
         const changeAmountTaken = { ...info, amountTaken, payd, amountPayd }
+        
         setData(changeAmountTaken)
     }
 
@@ -57,7 +64,9 @@ export default function Home() {
                 installments={installments}
                 newInstallments={newInstallments}
                 user={user} info={info}
-                handleAmountTaken={handleAmountTaken} />
+                handleAmountTaken={handleAmountTaken}
+                selected={selected}
+            />
         </div>
     )
 }

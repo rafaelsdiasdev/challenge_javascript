@@ -1,8 +1,6 @@
 .App {
-  /* text-align: center; */
   margin-top: 120px;
 }
-
 
 .App-link {
   color: #61dafb;
@@ -18,7 +16,6 @@
   background-position: center center;
   background-size: cover;
 }
-
 
 #page-container {
   position: relative;
@@ -65,6 +62,11 @@
 .btn-primary {
   background-color: #4CB1C9;
   border-color: #4CB1C9;
+}
+
+.btn-primary:hover {
+  background-color: rgb(153,60,176);
+  border-color: rgb(153,60,176);
 }
 
 .bg-navbar {

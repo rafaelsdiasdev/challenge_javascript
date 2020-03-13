@@ -7,30 +7,40 @@ export default function Installments(props) {
     const user = props.user
     const handleAmountTaken = props.handleAmountTaken
     const handleRadioChange = props.handleRadioChange
+    const selected = props.selected
+
+    const RadioButton = props => {
+        return (
+            <div className="form-check">
+                <input className="form-check-input" value={props.value} type="radio" name={props.name} id={props.id} checked={props.isSelected} onClick={(e) => handleRadioChange(e)} />
+                <label className="form-check-label" htmlFor={props.id}>{props.label}</label>
+            </div>
+        )
+    }
 
     return (
         <div className="container mb-4 mobile">
             <User user={user} info={info} />
             <h1 className="mt-4">Boletos</h1>
             <div>
-                <div className="form-check">
-                    <input className="form-check-input" type="radio" name="exampleRadios" id="toPay" defaultValue="option1" defaultChecked onClick={(e) => handleRadioChange(e)} />
-                    <label className="form-check-label" htmlFor="toPay">
-                        A pagar
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="radio" name="exampleRadios" id="payed" defaultValue="option2" onClick={(e) => handleRadioChange(e)} />
-                    <label className="form-check-label" htmlFor="payed">
-                        Pagos
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="radio" name="exampleRadios" id="together" defaultValue="option3" onClick={(e) => handleRadioChange(e)} />
-                    <label className="form-check-labe2" htmlFor="together">
-                        Ambos
-                    </label>
-                </div>
+                <RadioButton
+                    value="A pagar"
+                    label="A pagar"
+                    id="toPay"
+                    isSelected={selected === "A pagar"}
+                />
+                <RadioButton
+                    value="Pagos"
+                    label="Pagos"
+                    id="payed"
+                    isSelected={selected === "Pagos"}
+                />
+                <RadioButton
+                    value="Todos"
+                    label="Todos"
+                    id="together"
+                    isSelected={selected === "Todos"}
+                />
             </div>
             <div className="row">
                 <div className="col d-flex flex-wrap justify-content-between mobile">
@@ -42,9 +52,12 @@ export default function Installments(props) {
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title"><strong>Valor: </strong>{el.formatedValue}</h5>
-                                    {el.payd === false ? <p className="card-text" style={{ color: "red" }}>Parcela a pagar</p> : <p style={{ color: "green" }}>Parcela paga</p>}
-                                    {el.payd === false ? <button id="btn" className="btn btn-primary btn-pay" onClick={() => handleAmountTaken(idx)}>Pagar</button> : 
-                                    <button id="btn" className="btn btn-primary btn-pay" disabled>Pago</button>}
+                                    {el.payd === false ?
+                                        <p className="card-text" style={{ color: "red" }}>Parcela a pagar</p> :
+                                        <p style={{ color: "green" }}>Parcela paga</p>}
+                                    {el.payd === false ?
+                                        <button id="btn" className="btn btn-primary btn-pay" onClick={() => handleAmountTaken(idx)}>Pagar</button> :
+                                        <button id="btn" className="btn btn-primary btn-pay" disabled>Pago</button>}
                                 </div>
                             </div>
                         </div>
