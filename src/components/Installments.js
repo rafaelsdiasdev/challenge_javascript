@@ -64,7 +64,6 @@ export default function Installments(props) {
                     )
                     }
                 </div>
-
             </div>
         </div >
     )

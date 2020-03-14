@@ -2,16 +2,11 @@
   margin-top: 120px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .photo {
   display: inline-block;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -23,17 +18,18 @@
 }
 
 #footer {
-  background: rgb(153,60,176);
-  background: linear-gradient(90deg, rgba(153,60,176,1) 38%, rgba(76,178,201,1) 100%);
+  background: #993cb0;
+  background: linear-gradient(90deg, #993cb0 38%, #4cb2c9 100%);
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 5.5rem; 
-  color: #fff       
+  height: 5.5rem;
+  color: #fff;
 }
 
 #content-wrap {
-  padding-bottom: 8.5rem;    /* Footer height */
+  padding-bottom: 8.5rem;
+  /* Footer height */
 }
 
 /* Grow Shadow */
@@ -48,6 +44,7 @@
   -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
 }
+
 .hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.1);
@@ -65,13 +62,13 @@
 }
 
 .btn-primary:hover {
-  background-color: rgb(153,60,176);
-  border-color: rgb(153,60,176);
+  background-color: #993cb0;
+  border-color: #993cb0;
 }
 
 .bg-navbar {
-  background: rgb(153,60,176);
-  background: linear-gradient(90deg, rgba(153,60,176,1) 38%, rgba(76,178,201,1) 100%);
+  background: #993cb0;
+  background: linear-gradient(90deg, #993cb0 38%, #4cb2c9 100%);
 }
 
 @media only screen and (max-width: 767px) {
@@ -80,3 +77,5 @@
     justify-content: center !important;
   }
 }
+
+/*# sourceMappingURL=App.css.map */
