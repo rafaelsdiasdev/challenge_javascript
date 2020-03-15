@@ -15,6 +15,13 @@ $footer-color: #fff;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    transition: .5s;
+  }
+
+  .photo:hover {
+    transition: .5s;
+    filter: grayscale(100%);
+    filter: gray;
   }
   
   #page-container {

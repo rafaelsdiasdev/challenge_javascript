@@ -17,9 +17,24 @@ export default function User(props) {
                 </div>
                 <div className="col-md-4">
                     <p><strong>Juros Mensais: </strong>{monthlyInterest}%</p>
-                    <p><strong>Valor Pago: </strong>R$ {parseInt(amountPayd).toFixed(2)}</p>
-                    <p><strong>Total a pagar: </strong>R$ {parseInt(amountTaken + totalAmountInTaxes).toFixed(2)}</p>
-                    <p><strong>Total de juros: </strong>R$ {parseInt(totalAmountInTaxes).toFixed(2)}</p>
+                    <p><strong>Valor Pago: </strong>R$ {
+                    isNaN(amountPayd) ? 
+                    '' : 
+                    parseInt(amountPayd)
+                    .toFixed(2)
+                    .replace('.',',')}</p>
+                    <p><strong>Total a pagar: </strong>R$ {
+                    isNaN(amountTaken + totalAmountInTaxes) ? 
+                    '' : 
+                    parseInt(amountTaken + totalAmountInTaxes)
+                    .toFixed(2)
+                    .replace('.',',')}</p>
+                    <p><strong>Total de juros: </strong>R$ {
+                    isNaN(totalAmountInTaxes) ? 
+                    '' : 
+                    parseInt(totalAmountInTaxes)
+                    .toFixed(2)
+                    .replace('.',',')}</p>
                 </div>
             </div>
             <hr />
