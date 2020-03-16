@@ -12,7 +12,7 @@ export default function Installments(props) {
     const RadioButton = props => {
         return (
             <div className="form-check">
-                <input className="form-check-input" value={props.value} type="radio" name={props.name} id={props.id} checked={props.isSelected} onClick={(e) => handleRadioChange(e)} />
+                <input className="form-check-input" value={props.value} type="radio" name={props.name} id={props.id} checked={props.isSelected} onChange={(e) => handleRadioChange(e)} />
                 <label className="form-check-label" htmlFor={props.id}>{props.label}</label>
             </div>
         )

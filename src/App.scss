@@ -24,12 +24,12 @@ $footer-color: #fff;
     filter: gray;
   }
   
-  #page-container {
+  .page-container {
     position: relative;
-    min-height: 100vh;
+    min-height: calc(100vh - 7.5rem);
   }
   
-  #footer {
+  .footer {
     background: $secondary-color;
     background: linear-gradient(90deg, rgba(153,60,176,1) 38%, rgba(76,178,201,1) 100%);
     position: absolute;
@@ -39,7 +39,7 @@ $footer-color: #fff;
     color: $footer-color;     
   }
   
-  #content-wrap {
+  .content-wrap {
     padding-bottom: 8.5rem;    /* Footer height */
   }
   

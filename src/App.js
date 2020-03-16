@@ -8,12 +8,12 @@ import './App.css';
 export default function App() {
   
     return (
-      <div className="App" id="page-container">
+      <div className="App page-container">
         <Navbar/>
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
-        <Footer/>  
+        {/* <Footer/>   */}
       </div>
     )
 }

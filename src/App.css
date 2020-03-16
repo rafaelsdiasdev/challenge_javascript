@@ -19,12 +19,12 @@
   filter: gray;
 }
 
-#page-container {
+.page-container {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 7.5rem);
 }
 
-#footer {
+.footer {
   background: #993cb0;
   background: linear-gradient(90deg, #993cb0 38%, #4cb2c9 100%);
   position: absolute;
@@ -34,7 +34,7 @@
   color: #fff;
 }
 
-#content-wrap {
+.content-wrap {
   padding-bottom: 8.5rem;
   /* Footer height */
 }
