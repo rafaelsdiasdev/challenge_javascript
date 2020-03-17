@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import users from '../user.json'
 
 import Installments from './Installments'
-import Footer from './Footer'
-
 
 export default function Home() {
     const [installments, setInstallments] = useState([])
@@ -69,7 +67,6 @@ export default function Home() {
                 handleAmountTaken={handleAmountTaken}
                 selected={selected}
             />
-            <Footer/>
         </div>
     )
 }

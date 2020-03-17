@@ -1,19 +1,13 @@
 import React from 'react';
 import User from './User'
 
-export default function Installments(props) {
-    const info = props.info
-    const newInstallments = props.newInstallments
-    const user = props.user
-    const handleAmountTaken = props.handleAmountTaken
-    const handleRadioChange = props.handleRadioChange
-    const selected = props.selected
+export default function Installments({info, newInstallments, user, handleAmountTaken, handleRadioChange, selected}) {
 
-    const RadioButton = props => {
+    const RadioButton = ({value, name, id, isSelected, label}) => {
         return (
             <div className="form-check">
-                <input className="form-check-input" value={props.value} type="radio" name={props.name} id={props.id} checked={props.isSelected} onChange={(e) => handleRadioChange(e)} />
-                <label className="form-check-label" htmlFor={props.id}>{props.label}</label>
+                <input className="form-check-input" value={value} type="radio" name={name} id={id} checked={isSelected} onChange={(e) => handleRadioChange(e)} />
+                <label className="form-check-label" htmlFor={id}>{label}</label>
             </div>
         )
     }
